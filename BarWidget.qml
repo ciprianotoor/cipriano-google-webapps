@@ -62,7 +62,7 @@ BarWidget {
           required property var modelData
           width: content.width
           height: Style.space(44)
-          radius: Style.space(2)
+          radius: 4
           color: hover.containsMouse ? Qt.alpha(root.bar.foreground, 0.12) : "transparent"
 
           Image {
