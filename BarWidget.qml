@@ -15,7 +15,8 @@ BarWidget {
 
   function refreshApps() { if (!detector.running) detector.running = true }
   function launch(app) {
-    Quickshell.execDetached(["gtk-launch", app.desktopId])
+    // Launch through UWSM so Chromium inherits the active Wayland session.
+    Quickshell.execDetached(["uwsm-app", "--"].concat(app.command))
     menuOpen = false
   }
 
@@ -61,7 +62,7 @@ BarWidget {
           required property var modelData
           width: content.width
           height: Style.space(44)
-          radius: Style.radius2
+          radius: Style.space(2)
           color: hover.containsMouse ? Qt.alpha(root.bar.foreground, 0.12) : "transparent"
 
           Image {

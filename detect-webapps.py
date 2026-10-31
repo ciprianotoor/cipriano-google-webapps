@@ -5,6 +5,7 @@ import configparser
 import glob
 import json
 import os
+import shlex
 
 
 def desktop_files():
@@ -39,6 +40,7 @@ for path in desktop_files():
         "name": entry.get("Name", desktop_id),
         "icon": entry.get("Icon", "applications-internet"),
         "desktopId": desktop_id,
+        "command": shlex.split(exec_line),
         "desktopPath": path,
         "url": "",
     })
