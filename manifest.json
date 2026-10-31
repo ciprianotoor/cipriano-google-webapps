@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "id": "cipriano.google-webapps",
+  "name": "Google Webapps",
+  "version": "1.0.0",
+  "author": "Cipriano",
+  "license": "MIT",
+  "description": "Menú de webapps instaladas en Chromium",
+  "kinds": ["bar-widget"],
+  "activation": "on-demand",
+  "entryPoints": {"barWidget": "BarWidget.qml"},
+  "barWidget": {
+    "displayName": "Google Webapps",
+    "description": "Abrir webapps instaladas en Chromium",
+    "category": "Network",
+    "allowMultiple": false,
+    "defaultSection": "right"
+  }
+}
